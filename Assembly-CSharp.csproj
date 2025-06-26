@@ -69,10 +69,8 @@
     <Compile Include="Assets\Cainos\Third Party\Lucid Editor\Runtime\Attributes\EnableIfAttribute.cs" />
     <Compile Include="Assets\Cainos\Third Party\Lucid Editor\Runtime\Attributes\DisableLucidEditorAttribute.cs" />
     <Compile Include="Assets\Cainos\Third Party\Lucid Editor\Runtime\Attributes\DisableInPlayModeAttribute.cs" />
-    <Compile Include="Assets\Piloto Studio\Readme\Scripts\ReadmeBehaviour.cs" />
     <Compile Include="Assets\Cainos\Third Party\Lucid Editor\Runtime\Attributes\HelpBoxIfAttribute.cs" />
     <Compile Include="Assets\Cainos\Third Party\Lucid Editor\Runtime\Attributes\ShowIfAttribute.cs" />
-    <Compile Include="Assets\Piloto Studio\Readme\Scripts\Readme.cs" />
     <Compile Include="Assets\Cainos\Third Party\Lucid Editor\Runtime\Attributes\HideLabelAttribute.cs" />
     <Compile Include="Assets\Cainos\Third Party\Lucid Editor\Runtime\Attributes\RequiredAttribute.cs" />
     <Compile Include="Assets\Cainos\Third Party\Lucid Editor\Runtime\Attributes\GroupAttribute.cs" />
@@ -102,7 +100,6 @@
     <Compile Include="Assets\Cainos\Third Party\Lucid Editor\Runtime\Attributes\LabelWidthAttribute.cs" />
     <Compile Include="Assets\Cainos\Pixel Art Platformer - Village Props\Script\MovingPlatform.cs" />
     <Compile Include="Assets\Cainos\Third Party\Lucid Editor\Runtime\Attributes\HorizontalLineAttribute.cs" />
-    <Compile Include="Assets\Scripts\CameraController.cs" />
     <Compile Include="Assets\Cainos\Third Party\Lucid Editor\Runtime\Attributes\PropertyOrderAttribute.cs" />
     <Compile Include="Assets\Cainos\Third Party\Lucid Editor\Runtime\Attributes\FoldoutGroupAttribute.cs" />
   </ItemGroup>
