@@ -67,12 +67,15 @@
     <Compile Include="Assets\Cainos\Third Party\Lucid Editor\Runtime\Attributes\HelpBoxAttribute.cs" />
     <Compile Include="Assets\Cainos\Third Party\Lucid Editor\Runtime\Attributes\HideIfAttribute.cs" />
     <Compile Include="Assets\Cainos\Third Party\Lucid Editor\Runtime\Attributes\EnableIfAttribute.cs" />
+    <Compile Include="Assets\Scripts\Sound\AudioGroup.cs" />
     <Compile Include="Assets\Cainos\Third Party\Lucid Editor\Runtime\Attributes\DisableLucidEditorAttribute.cs" />
     <Compile Include="Assets\Cainos\Third Party\Lucid Editor\Runtime\Attributes\DisableInPlayModeAttribute.cs" />
     <Compile Include="Assets\Cainos\Third Party\Lucid Editor\Runtime\Attributes\HelpBoxIfAttribute.cs" />
     <Compile Include="Assets\Cainos\Third Party\Lucid Editor\Runtime\Attributes\ShowIfAttribute.cs" />
+    <Compile Include="Assets\Scripts\SaveController.cs" />
     <Compile Include="Assets\Cainos\Third Party\Lucid Editor\Runtime\Attributes\HideLabelAttribute.cs" />
     <Compile Include="Assets\Cainos\Third Party\Lucid Editor\Runtime\Attributes\RequiredAttribute.cs" />
+    <Compile Include="Assets\Scripts\Menu\SaveManager.cs" />
     <Compile Include="Assets\Cainos\Third Party\Lucid Editor\Runtime\Attributes\GroupAttribute.cs" />
     <Compile Include="Assets\Cainos\Third Party\Lucid Editor\Runtime\Attributes\IndentAttribute.cs" />
     <Compile Include="Assets\Cainos\Third Party\Lucid Editor\Runtime\Attributes\ButtonAttribute.cs" />
@@ -88,6 +91,7 @@
     <Compile Include="Assets\Cainos\Third Party\Lucid Editor\Runtime\Attributes\HorizontalGroupAttribute.cs" />
     <Compile Include="Assets\Cainos\Third Party\Lucid Editor\Runtime\Attributes\BoxGroupAttribute.cs" />
     <Compile Include="Assets\Cainos\Third Party\Lucid Editor\Runtime\Attributes\LabelTextAttribute.cs" />
+    <Compile Include="Assets\Scripts\Sound\SoundSystem.cs" />
     <Compile Include="Assets\Cainos\Third Party\Lucid Editor\Runtime\Attributes\DisableIfAttribute.cs" />
     <Compile Include="Assets\Scripts\CameraFollow.cs" />
     <Compile Include="Assets\Cainos\Third Party\Lucid Editor\Runtime\Attributes\AssetsOnlyAttribute.cs" />
@@ -95,8 +99,10 @@
     <Compile Include="Assets\Cainos\Pixel Art Platformer - Village Props\Script\BoundingPlatform.cs" />
     <Compile Include="Assets\Cainos\Third Party\Lucid Editor\Runtime\Attributes\HideMonoScript.cs" />
     <Compile Include="Assets\Cainos\Third Party\Lucid Editor\Runtime\Attributes\TabGroupAttribute.cs" />
+    <Compile Include="Assets\Scripts\Menu\MenuManager.cs" />
     <Compile Include="Assets\Cainos\Third Party\Lucid Editor\Runtime\Attributes\DisableInEditModeAttribute.cs" />
     <Compile Include="Assets\Cainos\Third Party\Lucid Editor\Runtime\Attributes\ValidateInputAttribute.cs" />
+    <Compile Include="Assets\Scripts\environment\MenuParallaxScript.cs" />
     <Compile Include="Assets\Cainos\Third Party\Lucid Editor\Runtime\Attributes\LabelWidthAttribute.cs" />
     <Compile Include="Assets\Cainos\Pixel Art Platformer - Village Props\Script\MovingPlatform.cs" />
     <Compile Include="Assets\Cainos\Third Party\Lucid Editor\Runtime\Attributes\HorizontalLineAttribute.cs" />
