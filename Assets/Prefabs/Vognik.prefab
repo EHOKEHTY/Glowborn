@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5992712560558302438}
   m_Layer: 0
   m_Name: Vognik
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -103,6 +103,10 @@ MonoBehaviour:
   rb: {fileID: 7427035925833093352}
   moveSpeed: 10
   jumpForce: 10
+  jumpHoldTime: 0.2
+  minJumpForce: 5
+  coyoteTime: 0.2
+  jumpBufferTime: 0.2
 --- !u!50 &7427035925833093352
 Rigidbody2D:
   serializedVersion: 4

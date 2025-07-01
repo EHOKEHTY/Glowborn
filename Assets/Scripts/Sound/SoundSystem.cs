@@ -1,62 +1,25 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public class SoundSystem : MonoBehaviour
 {
-    const string SFXVOLUME = "sfxVol", MUSICVOLUME = "musicVolume";
-
-    public static SoundSystem Instance;
-
-    [Header("Аудиоисточники")]
-    public AudioSource musicSource;
-    public AudioSource sfxSource;
-
-    [Header("Громкость")]
-    [Range(0f, 1f)] public float musicVolume = 1f;
-    [Range(0f, 1f)] public float sfxVolume = 1f;
-
-    private void Awake()
+    [SerializeField] private AudioClip[] Sounds;
+    [SerializeField] private AudioClip[] Musics;
+    [SerializeField] private float _musicVolume;
+    [SerializeField] private float _SFXVolume;
+    private AudioSource _audioSource => GetComponent<AudioSource>();
+    private void Start()
     {
-        if (Instance == null) Instance = this;
-        else Destroy(gameObject);
-
-        DontDestroyOnLoad(gameObject);
-        musicVolume = PlayerPrefs.GetFloat(MUSICVOLUME, 1f);
-        sfxVolume = PlayerPrefs.GetFloat(SFXVOLUME, 1f);
-        ApplyVolumes();
+        _musicVolume = PlayerPrefs.GetFloat("musicVolume");
+        _SFXVolume = PlayerPrefs.GetFloat("SFXVolume");
     }
-
-    public static void Play(AudioClip clip, AudioType type = AudioType.SFX)
+    public void PlaySound(AudioClip clip, float p1 = 0.8f, float p2 = 1.2f)
     {
-        if (clip == null) return;
-        if (type == AudioType.Music)
-            Instance.musicSource.PlayOneShot(clip, Instance.musicVolume);
-        else
-            Instance.sfxSource.PlayOneShot(clip, Instance.sfxVolume);
+        _audioSource.pitch = Random.Range(p1, p2);
+        _audioSource.PlayOneShot(clip, _SFXVolume);
     }
-
-    public static void Play(AudioGroup group)
+    public void PlayMusic(AudioClip clip)
     {
-        if (group == null) return;
-        Play(group.GetRandomClip(), group.type);
+        _audioSource.PlayOneShot(clip, _musicVolume);
     }
-
-    public void SetMusicVolume(float volume)
-    {
-        musicVolume = volume;
-        ApplyVolumes();
-    }
-
-    public void SetSfxVolume(float volume)
-    {
-        sfxVolume = volume;
-        ApplyVolumes();
-    }
-
-    private void ApplyVolumes()
-    {
-        musicSource.volume = musicVolume;
-        sfxSource.volume = sfxVolume;
-    }   
 }

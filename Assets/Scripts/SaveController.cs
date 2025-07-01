@@ -1,28 +1,38 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using System.IO;
+using UnityEngine.SceneManagement;
 
 public class SaveController : MonoBehaviour
 {
-    public Item item;
+    private const string PlayerPosX = "PlayerPosX";
+    private const string PlayerPosY = "PlayerPosY";
+    private const string PlayerHP = "PlayerHP";
+    private const string SceneName = "SceneName";
 
-
-    [ContextMenu("Load")]
-    public void FileLoad()
+    public static void SavePlayer(Player playerTransform)
     {
-        item = JsonUtility.FromJson<Item>(File.ReadAllText(Application.streamingAssetsPath + "/JSON.json"));
+        PlayerPrefs.SetString(SceneName, SceneManager.GetActiveScene().name);
+        PlayerPrefs.SetFloat(PlayerPosX, playerTransform.transform.position.x);
+        PlayerPrefs.SetFloat(PlayerPosY, playerTransform.transform.position.y);
+        PlayerPrefs.SetInt(PlayerHP, playerTransform.currentHealth);
+        PlayerPrefs.Save();
     }
 
-
-    [ContextMenu("Save")]
-    public void FileSave()
+    public static void LoadPlayer(Player player)
     {
-        File.WriteAllText(Application.streamingAssetsPath + "/JSON.json", JsonUtility.ToJson(item));
+        if (PlayerPrefs.HasKey(PlayerPosX) && PlayerPrefs.HasKey(PlayerPosY))
+        {
+            if (PlayerPrefs.GetString(SceneName) != SceneManager.GetActiveScene().name)
+            {
+                SceneManager.LoadScene(PlayerPrefs.GetString(SceneName));
+            }
+            float x = PlayerPrefs.GetFloat(PlayerPosX);
+            float y = PlayerPrefs.GetFloat(PlayerPosY);
+            player.transform.position = new Vector3(x, y, player.transform.position.z);
+        }
     }
-    public class Item
+
+    public static void SaveGame()
     {
-        public int SFXVolume;
-        public int MusicVolume;
+        PlayerPrefs.Save();
     }
 }
