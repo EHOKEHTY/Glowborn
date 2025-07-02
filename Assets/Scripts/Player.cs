@@ -38,7 +38,7 @@ public class Player : MonoBehaviour
     }
     private void Start()
     {
-        SaveController.LoadPlayer(this);
+        //SaveController.LoadPlayer(this);
         UIHealth.Instance.UpdateHearts(currentHealth); // оновлення UI при старті
     }
 

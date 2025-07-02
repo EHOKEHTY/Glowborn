@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-    public Transform target;
+    private Player Player;
 
     public Vector3 baseOffset = new Vector3(0f, 1.5f, -10f);
 
@@ -18,20 +18,21 @@ public class CameraFollow : MonoBehaviour
 
     void Start()
     {
-        if (target != null)
-            lastTargetPosition = target.position;
+        Player = FindObjectOfType<Player>();
+        if (Player != null)
+            lastTargetPosition = Player.transform.position;
     }
 
     void LateUpdate()
     {
-        if (target == null) return;
+        if (Player == null) return;
 
-        Vector3 targetMovement = target.position - lastTargetPosition;
+        Vector3 targetMovement = Player.transform.position - lastTargetPosition;
         Vector3 anticipation = targetMovement.normalized * anticipationDistance;
 
         currentAnticipation = Vector3.Lerp(currentAnticipation, anticipation, Time.deltaTime * anticipationSpeed);
 
-        Vector3 desiredPosition = target.position + baseOffset + new Vector3(currentAnticipation.x, 0f, 0f);
+        Vector3 desiredPosition = Player.transform.position + baseOffset + new Vector3(currentAnticipation.x, 0f, 0f);
 
         float smoothY = Mathf.SmoothDamp(transform.position.y, desiredPosition.y, ref velocity.y, verticalSmoothTime);
         float smoothX = Mathf.Lerp(transform.position.x, desiredPosition.x, Time.deltaTime * followSpeed);
@@ -39,6 +40,6 @@ public class CameraFollow : MonoBehaviour
 
         transform.position = new Vector3(smoothX, smoothY, smoothZ);
 
-        lastTargetPosition = target.position;
+        lastTargetPosition = Player.transform.position;
     }
 }

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 9176079601799120267}
   - component: {fileID: 1709957578188529598}
   - component: {fileID: 3057328999733024461}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PF Village Props - Spike
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -190,3 +190,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damagePerSecond: 1
+  damageInterval: 1
+  damageTimer: 0
